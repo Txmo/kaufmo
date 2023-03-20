@@ -1,23 +1,63 @@
-export class TrieNode<V> {
-    key: string;
-    value: V;
-    children = Map<string, V>;
+/**
+ * Oriented after https://en.wikipedia.org/wiki/Trie
+ */
 
-    constructor(key: string, value: V) {
-        this.key = key;
+export class TrieNode<V> {
+    value: null | V;
+    children: Map<string, TrieNode<V>>;
+
+    constructor(value: null | V) {
         this.value = value;
+        this.children = new Map<string, TrieNode<V>>();
     }
 }
 
 export default class Trie<V> {
-    root: null | TrieNode<V> = null;
+    private root: TrieNode<V> = new TrieNode<V>(null);
+    private count: number = 0;
 
     add(key: string, value: V): TrieNode<V> {
-        return new TrieNode<V>(key, value);
+        let setNewNode: boolean = false;
+        key = key.toLowerCase();
+        let node: TrieNode<V> = this.root;
+        for (let i = 0; i < key.length; ++i) {
+            let newNode: undefined | TrieNode<V> = node.children.get(key[i]);
+            if (typeof newNode === "undefined") {
+                newNode = new TrieNode<V>(null);
+                node.children.set(key[i], newNode);
+                setNewNode = true;
+            }
+            node = newNode;
+        }
+        node.value = value;
+        if (setNewNode) {
+            ++this.count;
+        }
+        return node;
     }
 
-    find(key: string): Array<TrieNode<V>> {
-        let arr = new Array<TrieNode<V>>();
-        return arr;
+    findNode(key: string): undefined | TrieNode<V> {
+        key = key.toLowerCase();
+        let node: TrieNode<V> = this.root;
+        for (let i = 0; i < key.length; ++i) {
+            let newNode: undefined | TrieNode<V> = node.children.get(key[i]);
+            if (typeof newNode === "undefined") {
+                return undefined;
+            }
+            node = newNode;
+        }
+        return node;
+    }
+
+    find(key: string): false | null | V {
+        let node: undefined | TrieNode<V> = this.findNode(key);
+        if (typeof node === "undefined") {
+            return false;
+        }
+        return node.value;
+    }
+
+    valueCount(): number {
+        return this.count;
     }
 }
