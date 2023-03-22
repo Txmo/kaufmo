@@ -5,11 +5,7 @@ import WikiParser from './WikiParser';
 
 class App extends React.Component {
   componentDidMount(): void {
-    const parser = new WikiParser();
-    const nodeList = document.querySelectorAll('.div-col > ul > li');
-    console.log(parser.parse(
-      nodeList as NodeListOf<HTMLLIElement>
-    ));
+    WikiParser.logUpdatedJSON();
   }
   render(): React.ReactNode {
     return (

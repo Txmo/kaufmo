@@ -1,5 +1,3 @@
-export { };
-
 interface Brand {
     id: number;
     name: string;
@@ -21,7 +19,14 @@ export class BrandData {
 }
 
 export default class WikiParser {
-
+    static logUpdatedJSON(): void {
+        const parser = new WikiParser();
+        const nodeList = document.querySelectorAll('.div-col > ul > li');
+        console.log(parser
+            .parse(nodeList as NodeListOf<HTMLLIElement>)
+            .getJSONString()
+        )
+    }
     parse(listElements: NodeListOf<HTMLLIElement>): BrandData {
         const brands: Array<Brand> = [];
         let count = 0;
