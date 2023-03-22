@@ -4,7 +4,7 @@ import App from './App';
 
 test('renders at least one company', () => {
   render(<App />);
-  const element = screen.getByText(/CmpName0/i);
+  const element = screen.getByText(/Bear Brand Sterilized/i);
   expect(element).toBeInTheDocument();
 });
 

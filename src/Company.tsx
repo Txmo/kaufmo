@@ -5,11 +5,11 @@ interface CompanyProp {
     companyName: string;
 }
 
-export default function Company({companyId, companyName} : CompanyProp) {
+export default function Company({ companyId: companyId, companyName: companyName }: CompanyProp) {
     return (
         <div className="company">
             ID: {companyId} <br />
-            Name: {companyName} <br />
+            Name: {companyName}
         </div>
     );
 }
