@@ -1,11 +1,11 @@
 import React from 'react';
 
 interface CompanyProp {
-    companyId: number;
-    companyName: string;
+    id: number;
+    name: string;
 }
 
-export default function Company({ companyId: companyId, companyName: companyName }: CompanyProp) {
+export default function Company({ id: companyId, name: companyName }: CompanyProp) {
     return (
         <div className="company">
             ID: {companyId} <br />
@@ -13,3 +13,5 @@ export default function Company({ companyId: companyId, companyName: companyName
         </div>
     );
 }
+
+export type { CompanyProp as CompanyPropType }

@@ -1,11 +1,17 @@
 import React from 'react';
-import Company from './Company';
+import Company, { CompanyPropType } from './Company';
 import brandJSON from './brands_nestle.json';
+import Trie from './Trie';
 
-export default function CompanyList() {
+interface CompanyListProp {
+    trie: Trie<CompanyPropType>
+}
+
+export default function CompanyList({ trie }: CompanyListProp) {
     const companyList: Array<JSX.Element> = [];
     brandJSON.forEach((company) => {
-        companyList.push(<Company key={company.id} companyId={company.id} companyName={company.name} />)
+        trie.add(company.name, company);
+        companyList.push(<Company key={company.id} id={company.id} name={company.name} />)
     });
 
     return (

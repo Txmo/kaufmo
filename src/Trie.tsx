@@ -14,10 +14,10 @@ export class TrieNode<V> {
 
 export default class Trie<V> {
     private root: TrieNode<V> = new TrieNode<V>(null);
-    private count: number = 0;
+    private count = 0;
 
     add(key: string, value: V): TrieNode<V> {
-        let setNewNode: boolean = false;
+        let setNewNode = false;
         key = key.toLowerCase();
         let node: TrieNode<V> = this.root;
         for (let i = 0; i < key.length; ++i) {
@@ -40,7 +40,7 @@ export default class Trie<V> {
         key = key.toLowerCase();
         let node: TrieNode<V> = this.root;
         for (let i = 0; i < key.length; ++i) {
-            let newNode: undefined | TrieNode<V> = node.children.get(key[i]);
+            const newNode: undefined | TrieNode<V> = node.children.get(key[i]);
             if (typeof newNode === "undefined") {
                 return undefined;
             }
@@ -50,7 +50,7 @@ export default class Trie<V> {
     }
 
     find(key: string): false | null | V {
-        let node: undefined | TrieNode<V> = this.findNode(key);
+        const node: undefined | TrieNode<V> = this.findNode(key);
         if (typeof node === "undefined") {
             return false;
         }
