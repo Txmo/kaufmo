@@ -21,8 +21,6 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src",
-    "./src/App.tsx",
-    "./src/WikiParser.tsx"
+    "src"
   ]
 }
