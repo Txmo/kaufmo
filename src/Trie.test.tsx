@@ -1,3 +1,4 @@
+import { render } from '@testing-library/react';
 import Trie, { TrieNode } from './Trie';
 
 test('counts 1 after adding 1 item to new trie', () => {
