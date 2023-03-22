@@ -1,31 +1,41 @@
 export { };
 
 interface Brand {
+    id: number;
     name: string;
+}
+
+export class BrandData {
+    private data: Array<Brand>;
+    constructor(data: Array<Brand>) {
+        this.data = data;
+    }
+
+    getData(): Array<Brand> {
+        return this.data;
+    }
+
+    getJSONString(): string {
+        return JSON.stringify(this.data);
+    }
 }
 
 export default class WikiParser {
 
-    static parse(): string {
-        const container: Element | null = document.querySelector('#wiki-container');
-        if (container === null) {
-            console.error('Unable to find container element');
-            return '';
-        }
-        const listElements: NodeListOf<HTMLLIElement> = document.querySelectorAll('.div-col > ul > li');
+    parse(listElements: NodeListOf<HTMLLIElement>): BrandData {
         const brands: Array<Brand> = [];
+        let count = 0;
         listElements.forEach((li) => {
             const children: NodeListOf<HTMLLIElement> = li.querySelectorAll('ul > li') as NodeListOf<HTMLLIElement>;
             const name: string = li.innerText.split('\n')[0];
             if (children.length > 0) {
                 children.forEach((inner) => {
-                    brands.push({ name: `${name} - ${inner.innerText}` })
+                    brands.push({ id: ++count, name: `${name} - ${inner.innerText}` })
                 });
             } else {
-                brands.push({ name: name });
+                brands.push({ id: ++count, name: name });
             }
         });
-        console.log(brands);
-        return '';
+        return new BrandData(brands);
     }
 }
