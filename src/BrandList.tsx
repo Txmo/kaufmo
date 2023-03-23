@@ -1,22 +1,20 @@
 import React from 'react';
 import Brand, { BrandPropType } from './Brand';
-import brandJSON from './brands_nestle.json';
-import Trie from './Trie';
 
 interface BrandListProp {
-    trie: Trie<BrandPropType>
+    brands: Array<BrandPropType>
 }
 
-export default function BrandList({ trie }: BrandListProp) {
+export default function BrandList({ brands }: BrandListProp) {
     const brandList: Array<JSX.Element> = [];
-    brandJSON.forEach((brand) => {
-        trie.add(brand.name, brand);
+    brands.forEach((brand) => {
         brandList.push(<Brand key={brand.id} id={brand.id} name={brand.name} />)
     });
 
     return (
-        <div className="brand-list-container">
+        <ul className="brand-list-container">
+            {brands.length === 0 && <li>Keine Suchergebnisse...</li>}
             {brandList}
-        </div>
+        </ul>
     );
 }

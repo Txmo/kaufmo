@@ -16,6 +16,10 @@ export default class Trie<V> {
     private root: TrieNode<V> = new TrieNode<V>(null);
     private count = 0;
 
+    getRoot(): TrieNode<V> {
+        return this.root;
+    }
+
     add(key: string, value: V): TrieNode<V> {
         let setNewNode = false;
         key = key.toLowerCase();

@@ -7,10 +7,10 @@ interface BrandProp {
 
 export default function Brand({ id, name }: BrandProp) {
     return (
-        <div className="brand">
+        <li className="brand">
             ID: {id} <br />
             Name: {name}
-        </div>
+        </li>
     );
 }
 
