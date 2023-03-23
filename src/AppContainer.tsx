@@ -1,16 +1,16 @@
 import React from 'react';
 import { useState } from 'react';
-import type { CompanyPropType } from './Company';
-import CompanyList from './CompanyList';
+import type { BrandPropType } from './Brand';
+import BrandList from './BrandList';
 import Search from './Search';
 import Trie from './Trie';
 
 export default function AppContainer() {
     const [searchInput, setSearchInput] = useState("");
-    const trie = new Trie<CompanyPropType>();
+    const trie = new Trie<BrandPropType>();
     return (
         <div className="app-container">
-            <CompanyList trie={trie} />
+            <BrandList trie={trie} />
             <Search value={searchInput} changeHandler={setSearchInput} />
         </div>
     );
