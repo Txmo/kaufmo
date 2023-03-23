@@ -15,7 +15,7 @@ export default function BrandList({ trie }: BrandListProp) {
     });
 
     return (
-        <div className="company-list-container">
+        <div className="brand-list-container">
             {brandList}
         </div>
     );
