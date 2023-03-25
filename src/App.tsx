@@ -1,5 +1,5 @@
 import * as React from 'react'
-import AppContainer from './AppContainer';
+import BrandContainer from './BrandContainer';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
@@ -17,7 +17,7 @@ class App extends React.Component {
       <div className="app" >
         <NavigationContainer>
           <Tab.Navigator>
-            <Tab.Screen name="Brands" component={AppContainer} />
+            <Tab.Screen name="Brands" component={BrandContainer} />
             <Tab.Screen name="Shopping list" component={TestComponent} />
             <Tab.Screen name="Seasonals" component={TestComponent} />
             <Tab.Screen name="FAQ" component={TestComponent} />

@@ -47,7 +47,7 @@ body {
     flex-direction: column;
 }
 
-.app-container {
+.brand-container {
     display: flex;
     width: 100%;
     height: 100%;

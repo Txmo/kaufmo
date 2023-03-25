@@ -6,7 +6,7 @@ import Search from './Search';
 import Trie, { TrieNode } from './Trie';
 import brandJSON from './brands_nestle.json';
 
-export default function AppContainer() {
+export default function BrandContainer() {
     const [searchInput, setSearchInput] = useState("");
     const trie = new Trie<BrandPropType>();
     //init trie
@@ -40,7 +40,7 @@ export default function AppContainer() {
     }
 
     return (
-        <div className="app-container">
+        <div className="brand-container">
             <BrandList brands={searchResult} />
             <Search value={searchInput} changeHandler={search} />
         </div>
