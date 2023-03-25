@@ -17,8 +17,10 @@ class App extends React.Component {
       <div className="app" >
         <NavigationContainer>
           <Tab.Navigator>
-            <Tab.Screen name="Home" component={AppContainer} />
-            <Tab.Screen name="Test" component={TestComponent} />
+            <Tab.Screen name="Brands" component={AppContainer} />
+            <Tab.Screen name="Shopping list" component={TestComponent} />
+            <Tab.Screen name="Seasonals" component={TestComponent} />
+            <Tab.Screen name="FAQ" component={TestComponent} />
           </Tab.Navigator>
         </NavigationContainer>
       </div>
