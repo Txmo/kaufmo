@@ -17,7 +17,7 @@ export default function FAQ() {
             <p>As the Wikipedia page states, these brands are only a part of the many more Nestlé-brands.</p>
             <p>
                 For example the german page list additional brands and the english page probably also has brands that are missing in the german.
-                I do not have tool that compares both pages and spits out differences and i also really do not want to compare them by hand, so for the only source is the english page.
+                I do not have a tool that compares both pages and spits out differences and i also really do not want to compare them by hand, so for now the only source is the english page.
             </p>
             <p>If you know a brand that is missing, please inform or update the Wikipedia, as stated in the answer above.</p>
 
@@ -31,7 +31,7 @@ export default function FAQ() {
             <p>
                 It might also be cool to have the ability to select or deselect certain &quot;lists&quot; of brands.
                 For example you could then select Nestlé and Pepsi but deselect CocaCola or someting like that.
-                This could also enable &quot;community-lists&quot;, which could be custom made lists that are than put into the GitHub repository and made available to select.
+                This could also enable &quot;community-lists&quot;, which could be custom made lists that are then put into the GitHub repository and made available to select.
                 These could be lists for certain countries or regions.
             </p>
         </div>
