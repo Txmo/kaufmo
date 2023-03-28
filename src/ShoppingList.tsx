@@ -1,14 +1,19 @@
 import React from "react";
-import ShoppingItem from "./ShoppingItem";
+import ShoppingItem, { ShoppingItemPropsType } from "./ShoppingItem";
 
-export default function ShoppingList() {
-    const list = [];
-    for (let i = 0; i < 20; ++i) {
-        list.push(<ShoppingItem id={i} name={`My Item ${i}`} />)
-    }
+interface ShoppingListProps {
+    list: Array<string>
+    removeHandler(id: number): void
+}
+
+export default function ShoppingList({ list, removeHandler }: ShoppingListProps) {
+    const elems: Array<JSX.Element> = [];
+    list.forEach((item, index) => {
+        elems.push(<ShoppingItem id={index} name={item} removeHandler={removeHandler} />)
+    });
     return (
         <ul className="shopping-list">
-            {list}
+            {elems}
         </ul>
     )
 }
