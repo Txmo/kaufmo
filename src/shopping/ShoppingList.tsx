@@ -1,5 +1,5 @@
 import React from "react";
-import ShoppingItem, { ShoppingItemPropsType } from "./ShoppingItem";
+import ShoppingItem from "./ShoppingItem";
 
 interface ShoppingListProps {
     list: Array<string>
