@@ -9,7 +9,7 @@ interface ShoppingItemProps {
 export default function ShoppingItem({ id, name, removeHandler }: ShoppingItemProps) {
 
     return (
-        <li id={id.toString()}><span>{name}</span><button onClick={(e) => { removeHandler(id) }} type="button">Remove</button></li>
+        <li id={id.toString()}><span>{name}</span><button onClick={() => { removeHandler(id) }} type="button">&#x1f5d9;</button></li>
     )
 }
 

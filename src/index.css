@@ -8,6 +8,7 @@
     --lighter: #49a0ce;
     --border: var(--light);
     --font: var(--light);
+    --react-bg: rgb(242, 242, 242);
 }
 
 html {
@@ -59,10 +60,33 @@ body {
 .shopping-list {
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 100%;
     flex: 1;
     overflow-y: scroll;
+    list-style: none;
+    padding: 1rem;
+}
+
+.brand-list-container li,
+.shopping-list li {
+    display: flex;
+    font-size: 1.125rem;
+    padding: 5px;
+    border-bottom: 1px solid var(--dark);
+    align-items: center;
+}
+
+.shopping-list li span {
+    flex: 1;
+}
+
+.shopping-list li button {
+    font-size: 2rem;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: var(--react-bg);
+    color: var(--dark);
 }
 
 .search-container,
@@ -94,6 +118,8 @@ body {
 }
 
 .shopping-action-bar button {
+    background-color: var(--dark);
+    color: white;
     margin-left: 0;
     width: 20%;
 }
