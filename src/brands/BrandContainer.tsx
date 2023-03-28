@@ -2,9 +2,9 @@ import React from 'react';
 import { useState } from 'react';
 import type { BrandPropType } from './Brand';
 import BrandList from './BrandList';
-import Search from './Search';
 import Trie, { TrieNode } from './Trie';
 import brandJSON from './brands_nestle.json';
+import Search from './Search';
 
 export default function BrandContainer() {
     const [searchInput, setSearchInput] = useState("");

@@ -1,8 +1,8 @@
 import * as React from 'react'
-import BrandContainer from './BrandContainer';
+import BrandContainer from './brands/BrandContainer';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import ShoppingListContainer from './ShoppingListContainer';
+import ShoppingListContainer from './shopping/ShoppingListContainer';
 
 function TestComponent() {
   return (
