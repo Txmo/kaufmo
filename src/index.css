@@ -138,3 +138,8 @@ body {
 .shopping-action-bar input::placeholder {
     opacity: 1;
 }
+
+.faq {
+    padding: 10px;
+    overflow-y: scroll;
+}
