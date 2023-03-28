@@ -19,6 +19,7 @@
     }
   ],
   "start_url": ".",
+  "description": "Grocery/Shopping helper that let's you check if a given brand is a Nestlé brand. Also provides possibility to save todo-list-like notes.",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
