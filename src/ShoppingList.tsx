@@ -9,7 +9,7 @@ interface ShoppingListProps {
 export default function ShoppingList({ list, removeHandler }: ShoppingListProps) {
     const elems: Array<JSX.Element> = [];
     list.forEach((item, index) => {
-        elems.push(<ShoppingItem id={index} name={item} removeHandler={removeHandler} />)
+        elems.push(<ShoppingItem key={index} id={index} name={item} removeHandler={removeHandler} />)
     });
     return (
         <ul className="shopping-list">
