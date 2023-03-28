@@ -5,12 +5,6 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import ShoppingListContainer from './shopping/ShoppingListContainer';
 import FAQ from './faq/FAQ';
 
-function TestComponent() {
-  return (
-    <div>TestComponent</div>
-  )
-}
-
 const Tab = createMaterialTopTabNavigator();
 
 class App extends React.Component {
@@ -21,7 +15,6 @@ class App extends React.Component {
           <Tab.Navigator>
             <Tab.Screen name="Brands" component={BrandContainer} />
             <Tab.Screen name="Shopping list" component={ShoppingListContainer} />
-            <Tab.Screen name="Seasonals" component={TestComponent} />
             <Tab.Screen name="FAQ" component={FAQ} />
           </Tab.Navigator>
         </NavigationContainer>
